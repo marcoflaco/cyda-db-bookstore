@@ -1,0 +1,23 @@
+extends ../application.pug
+
+block content
+  .container
+    .row
+      .col-xs-8.offset-xs-2
+        h1 Create a New Book
+        hr
+        form(action="/books" method="POST")
+          div(class="form-group")
+            label(for="book-title") Title
+            input(name="title" type="text" class="form-control" id="book-title")
+          div(class="form-group")
+            label(for="book-cover-image") Cover Image URL
+            input(name="imageURL" type="text" class="form-control" id="book-cover-image")
+          div(class="form-group")
+            label(for="book-author") Author
+            input(name="author" type="text" class="form-control" id="book-author")
+          div(class="form-group")
+            label(for="book-description") Description
+            textarea(name="description" class="form-control" rows=5 id="book-description")
+          div(class="form-group text-xs-right")
+            button(type="submit" class="btn btn-lg btn-success") Create a book
